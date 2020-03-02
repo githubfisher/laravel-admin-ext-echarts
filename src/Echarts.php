@@ -4,6 +4,7 @@ namespace Encore\Admin\Widgets\Echarts;
 
 use Encore\Admin\Admin;
 use Encore\Admin\Extension;
+use Illuminate\Support\Arr;
 use Illuminate\Contracts\Support\Renderable;
 
 class Echarts extends Extension implements Renderable
@@ -161,7 +162,7 @@ class Echarts extends Extension implements Renderable
         }
 
         if (!$this->showToolbox) {
-            array_set($this->toolbox, 'show', false);
+            Arr::set($this->toolbox, 'show', false);
         }
 
         $this->dataSource = $this->dataSource ?: $this->data;
